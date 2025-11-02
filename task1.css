@@ -4,5 +4,9 @@ h1{
 }
 .form{
     border: 2px salmon;
-    
+
+}
+.form1{
+    width: 50px;
+    height: 60px;
 }
