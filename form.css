@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+
+    color: rgb(241, 186, 119);
+    font-weight: 700;
+
+}
+.form table{
+    background-color: aquamarine;
+   width:  100%;
+    max-width: 600px;
+    border:5px solid black;
+    padding: 50px 50px 50px 50px;
+    justify-content: center;
+    
+    
+}
+.form td{
+   padding: 15px;
+   
+
+}
+.form td input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: 1px;
+    border-radius: 30px;
+
+}
+.form{
+    display: flex;
+    justify-content: center;
+}
+.form td input{
+    display: inline;
+}
+    
