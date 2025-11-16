@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="labask2.css">
+</head>
+<body>
+    <h1>Student Registration</h1>
+    <form onsubmit="return Submition()">
+        <label>Full Name :</label>
+        <input type="text"  id="Fname">
+        <label>Email :</label>
+        <input type="text" id="Email">
+        <label>Password:</label>
+        <input type="password" id="Pass">
+        <label>Confirm Password:</label>
+        <input type="password" id="Cpass">
+        <button onclick="regStudent()">Register</button>
+         <p id="result" style="color:green; font-weight:bold;"></p>
+
+    </form>
+    <h2>Course Registration</h2>
+    <form onsubmit="return Courseadd()">
+        <labal>Course Name:</labal>
+        <input type="text" id="Cname">
+        <button type="submit">Add course</button>
+    </form>
+    
+
+    <script>
+        function Submition()
+        {
+            var name= document.getElementById("Fname").value;
+            var email= document.getElementById("Email").value;
+            var pass= document.getElementById("Pass").value;
+            var cpass= document.getElementById("Cpass").value;
+
+
+            if (name === "" || email === "" || pass === "" || cpass === "") {
+        alert("All fields are required!");
+        return;
+    }
+    if (!email=="@") {
+        alert("Email must contain '@'");
+        return;
+    }
+     if (pass !== cpass) {
+        alert("Passwords do not match!");
+        return;
+    }
+     document.getElementById("result").innerHTML =
+        "Registration Successful!<br>Name: " + name + "<br>Email: " + email;
+
+
+
+
+        }
+        function Courseadd()
+        {
+            var cname= document.getElementById("Cname").value;
+            if(cname=="")
+        {
+            alert("Please Select a Course")
+        }
+        }
+    </script>
+</html>
