@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Asset&family=BBH+Bartle&family=Bowlby+One+SC&family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asset&family=BBH+Bartle&family=Bowlby+One+SC&family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asset&family=BBH+Bartle&family=Bowlby+One+SC&family=Mrs+Saint+Delafield&family=Sigmar+One&display=swap');
+
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            min-height: 100vh;
+            background-image:url("g.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+        .nav ul {
+    display: flex;
+    gap: 70px;   /* ⭐ perfect spacing */
+    padding: 10px;
+    margin: 10px;
+}
+
+.nav ul li {
+    list-style: none;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-family: "Bowlby One SC", sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+    color: beige;
+}
+
+        .auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+
+    display: flex;
+    gap: 30px;   /* ⭐ space between buttons */
+}
+
+.auth-buttons button {
+    padding: 12px 20px;
+    border-radius: 10px;
+    background-color: gray;
+    color: greenyellow;
+    font-family: sans-serif;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+        
+        h1{
+            text-align: center;
+            color:rgb(151, 250, 4);
+            top: 500px;
+            font-family:  "Asset", serif;
+            font-size: 100px;
+            
+            
+            
+        }
+        
+        p{
+            text-align: center;
+            font-family: "Mrs Saint Delafield", cursive;
+            font-size: 100px;
+            color: rgb(212, 212, 212);
+
+        }
+        .shopnow{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 120px;
+        }
+        .shopnow button{
+            width:15% ;
+            padding: 20px;
+            border: 3px solid gray;
+            border-radius: 30px;
+            background-color: black;
+            color: bisque;
+            font-size: 20px;
+            font-weight: 70px;
+        
+
+        }
+        ul li:hover{
+            color: greenyellow;
+            cursor: pointer;
+        }
+        .auth-buttons button:hover{
+            background-color: black;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <ul>
+            <li>Home</li>
+            <li>Query</li>
+            <li>Contact us</li>
+            <li>New Arrivals</li>
+            
+        </ul>
+        <div class="auth-buttons">
+    <button onclick="goLogin()">Log in</button>
+    <button onclick="goSignup()">Sign up</button>
+</div>
+
+       
+    </header>
+    <main class="content">
+        <h1>SAVYZ</h1>
+        <p>Your Wisest Choice</p>
+        <a class="shopnow" href="#"><button>Shop Now</button></a>
+    </main>
+    <script>
+        function goLogin(){
+            window.location.href="login.html";
+        }
+                function goSignup(){
+            window.location.href="signup.html";
+        }
+    </script>
+</body>
+</html>
