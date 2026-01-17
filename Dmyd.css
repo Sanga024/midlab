@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Asset&family=BBH+Bartle&family=Bowlby+One+SC&family=Frijole&family=Gravitas+One&family=Mrs+Saint+Delafield&family=Notable&family=Orbitron:wght@400..900&family=Sigmar+One&family=Unlock&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+
+
+
+
+img{
+    right:5%;
+    position: absolute;
+    width: 100px;
+
+}
+h1{
+     font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(170, 255, 0);
+  text-align:center;
+  padding: 60px;
+
+
+}
+body{
+    background-color: grey;
+    min-height: 100vh;
+}
