@@ -1,3 +1,55 @@
+
+
+
+<?php
+include "connect.php";
+
+$products = [
+    ["Rainbow Six", 200, "R6.jpeg"],
+    ["Naruto", 350, "naruto.webp"],
+    ["Luffy", 300, "luffy.webp"],
+    ["Sasuke", 320, "sasuke.jpg"],
+    ["Goku", 400, "goku.jpg"],
+    ["Ichigo", 280, "ichigo.jpeg"],
+    ["Death Note", 280, "dt.jpeg"],
+    ["JOJO", 280, "jojo.jpg"],
+    ["Demon Slayer", 280, "ds.jpg"]
+];
+
+$stmt = $conn->prepare("INSERT INTO product (name, price, image) VALUES (?, ?, ?)");
+
+foreach ($products as $p) {
+    $stmt->bind_param("sis", $p[0], $p[1], $p[2]);
+    $stmt->execute();
+}
+
+echo "Products inserted successfully!";
+$stmt->close();
+$conn->close();
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +75,12 @@
     </div>
     <div class="content">
         <img src="SAVYZ TEXT LOGO.png">
-        <div class="srcbar">
-            <input type="search" placeholder="Search">
-
+       <div class="srcbar">
+    <form method="GET" action="">
+        <input type="search" name="search" placeholder="Search products..." value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>">
+        <button type="submit">Search</button>
+    </form>
+</div>
 
         </div>
         
@@ -35,59 +90,37 @@
     </div>
     <div class="main">
 
-    <div class="procard">
-        <div class="product-img">
-           <img src="R6.jpeg">
-        </div>
-        <h3>Rainbow Six</h3>
-        <p>200 BDT</p>
-        <button>Add to Cart</button>
-    </div>
+    <?php
+include "connect.php";
 
-    <div class="procard">
-        <div class="product-img">
-            <img src="naruto.webp">
-        </div>
-        <h3>Naruto</h3>
-        <p>350 BDT</p>
-        <button>Add to Cart</button>
-    </div>
+// Default query: fetch all products
+$sql = "SELECT * FROM product";
 
-    <div class="procard">
-        <div class="product-img">
-            <img src="luffy.webp">
-        </div>
-        <h3>Luffy</h3>
-        <p>300 BDT</p>
-        <button>Add to Cart</button>
-    </div>
+// Check if search is set
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $search = $conn->real_escape_string($_GET['search']); // prevent SQL injection
+    $sql = "SELECT * FROM product WHERE name LIKE '%$search%'";
+}
 
-    <div class="procard">
-        <div class="product-img">
-            <img src="sasuke.jpg">
-        </div>
-        <h3>Sasuke</h3>
-        <p>320 BDT</p>
-        <button>Add to Cart</button>
-    </div>
+$result = $conn->query($sql);
 
-    <div class="procard">
-        <div class="product-img">
-            <img src="goku.jpg">
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) { ?>
+        <div class="procard">
+            <div class="product-img">
+                <img src="<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>">
+            </div>
+            <h3><?php echo $row['name']; ?></h3>
+            <p><?php echo $row['price']; ?> BDT</p>
+            <button>Add to Cart</button>
         </div>
-        <h3>Goku</h3>
-        <p>400 BDT</p>
-        <button>Add to Cart</button>
-    </div>
+<?php }
+} else {
+    echo "<p>No products found.</p>";
+}
+?>
 
-    <div class="procard">
-        <div class="product-img">
-            <img src="ichigo.jpeg">
-        </div>
-        <h3>Ichigo</h3>
-        <p>280 BDT</p>
-        <button>Add to Cart</button>
-    </div>
+
 
 </div>
 
