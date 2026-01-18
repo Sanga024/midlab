@@ -35,6 +35,21 @@ header p {
     gap: 30px;
     padding: 50px 20px;
 }
+offer-card {
+    background-color: rgba(255,255,255,0.9);
+    width: 300px;
+    border-radius: 20px;
+    border: 3px solid black;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
 
 
 
