@@ -67,7 +67,23 @@ offer-card {
     font-size: 16px;
     margin-bottom: 10px;
 }
+.offer-card .expiry {
+    font-weight: bold;
+    color: #ff0000;
+    margin-bottom: 15px;
+}
 
+.offer-card button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #66ff33;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
 
 
