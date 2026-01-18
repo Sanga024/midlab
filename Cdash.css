@@ -113,3 +113,8 @@
     object-fit: contain; /* no overflow, no stretch */
     display: block;
 }
+.procard h3 {
+    font-family: "Bowlby One SC", sans-serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
